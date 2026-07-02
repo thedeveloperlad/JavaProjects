@@ -35,15 +35,8 @@ public class Main {
             // for you, but you can always add more by pressing <shortcut actionId="ToggleLineBreakpoint"/>.
             System.out.println("i = " + i);
         }*/
-        // https://streamtpnew.com/eventos.json?nocache=1775656111252
-        // https://raw.githubusercontent.com/thedeveloperlad/links_channels/refs/heads/main/testing_json.json
-        // https://streamtp-abc.net/global1.php?stream=disney4
 
-        String targetUrl = "https://streamtp-abc.net/global1.php?stream=espn";
-        String testingUrlBig = "https://raw.githubusercontent.com/media-api-dev/media_movies/refs/heads/main/movies_media_2025_2026.m3u8";
-        String testingUrl2 = "https://raw.githubusercontent.com/thedeveloperlad/links_channels/refs/heads/main/stream_channels.m3u8";
-        //String testingUrl = "http://191.97.61.32:8000/playlist.m3u8";
-        String testingUrl = "http://45.176.240.128:8889/playlist.m3u8";
+        String testingUrl = "your http link";
         List<ReadM3u8Files.ChannelInfo> result = readM3u8Files.readM3u8Attributes(testingUrl);
         //result.
         // System.out.println(result);
@@ -69,7 +62,7 @@ public class Main {
         //result.forEach(a->System.out.println());
         //showM3u8File(testingUrl);
 
-        URL url = new URL("https://raw.githubusercontent.com/thedeveloperlad/links_channels/refs/heads/main/testing_json.json");
+        URL url = new URL("your http link");
         HttpURLConnection connection = (HttpURLConnection)url.openConnection();
         connection.setRequestMethod("GET");
         connection.connect();
