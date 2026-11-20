@@ -32,7 +32,7 @@ public class ReadM3U8File {
         }
     }
 
-    public static List<ChannelInfo> readM3u8Attributes(String path) throws MalformedURLException {
+    public static List<ChannelInfo> readM3u8Attributes(String path, String countryIP) throws MalformedURLException {
 
         String regex = "tvg-logo=\\\"(.*?)\\\" group-title=\\\"(.*?)\\\".*,(.+?)$";
         Pattern attrPattern = Pattern.compile(regex);
@@ -70,6 +70,7 @@ public class ReadM3U8File {
 
                     // Extract attributes and title using Regex
                     Matcher matcherAttributes = attrPattern.matcher(line);
+                    currentItem.group = countryIP;
                     if (matcherAttributes.matches()) {
                         currentItem.logo = matcherAttributes.group(1);
                         currentItem.group = matcherAttributes.group(2);
