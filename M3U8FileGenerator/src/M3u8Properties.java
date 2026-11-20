@@ -96,7 +96,7 @@ public class M3u8Properties extends JPanel {
         }
 
         try {
-            result = ReadM3U8File.readM3u8Attributes(userInput);
+            result = ReadM3U8File.readM3u8Attributes(userInput, ipLookup.getString("country"));
 
             if(result.isEmpty()){
                 JOptionPane.showMessageDialog(this, "No data - Connection refused: connect");
