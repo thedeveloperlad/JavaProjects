@@ -28,7 +28,7 @@ public class ReadM3U8File {
         @Override
         public String toString() {
             // return String.format("Channel: %s || URL: %s", title, url);
-            return String.format("#EXTINF:-1 tvg-id=\"\" group-title=\"-\", %s \n%s", title, url);
+            return String.format("#EXTINF:-1 tvg-id=\"\" group-title=\"%s\", %s \n%s", group, title, url);
         }
     }
 
@@ -73,7 +73,7 @@ public class ReadM3U8File {
                     currentItem.group = countryIP;
                     if (matcherAttributes.matches()) {
                         currentItem.logo = matcherAttributes.group(1);
-                        currentItem.group = matcherAttributes.group(2);
+                        // currentItem.group = matcherAttributes.group(2);
                         currentItem.title  = matcherAttributes.group(3);
                     } else {
                         currentItem.title = line.substring(commaIndex + 1);
